@@ -1,0 +1,42 @@
+# [HLA-search]
+## Overview
+**HLA-search** is an end-to-end immunopeptidomics data analysis tool. HLA-search takes raw data as input and return the search result with high quality.
+
+## Installation
+0. GPU is required to run HLA-search
+
+1. Install [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html). 
+
+2. Install [docker](https://docs.docker.com/engine/install/) Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
+
+3. Download HLA-search
+```
+git clone 
+```
+
+4. Download test raw data in data folder
+```
+cd data/
+sudo chmod +x download_test.sh
+bash download_test.sh
+```
+
+5. Run the whole pipeline:
+
+```
+sudo chmod +x test.sh
+bash test.sh
+```
+
+6. It will automatically generate a folder in result/ with same name of raw file. It might take 30~40 mins for the whole pipeline. After finished, the result is at result/20120321_EXQ1_MiBa_SA_HCC1143_1/result.csv.
+
+## Result
+The result includes best peptide(can be target or decoy) for each spectrum. The result will be sorted by a score. The first few rows will be like this:
+
+|index|charge|mass|peptide|mods|protein|myscore|
+|A1.7522.7522.2|2|1218.671482|RLLEYTPTAR|0|sp|P49841|GSK3B_HUMAN|1.0652809430298136|
+|A1.12663.12663.2|2|1093.592503|RASPFLLQY|0|"sp|O60256|KPRB_HUMAN|sp|Q14558|KPRA_HUMAN"|1.0544916867886331|
+|A1.4247.4247.2|2|1124.5947|TRLQHQTEL|0|sp|Q9UL54|TAOK2_HUMAN|1.0509270824169652|
+|A1.5765.5765.2|2|921.467442|FANGRSTGL|0|"sp|O94805|ACL6B_HUMAN|sp|O96019|ACL6A_HUMAN"|1.0467162548857218|
+|A1.7431.7431.2|2|850.50272|ARGPPAAVL|0|sp|Q05923|DUS2_HUMAN|1.038806109652818|
+|A1.7161.7161.3|3|945.565573|GLFGKTVPK|0|sp|P23284|PPIB_HUMAN|1.0383908589384576|

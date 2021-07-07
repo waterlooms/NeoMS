@@ -1,0 +1,1 @@
+curl ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2019/12/PXD013831/20120321_EXQ1_MiBa_SA_HCC1143_1.raw

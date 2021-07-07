@@ -1,0 +1,3 @@
+mgf=True
+filter="peakPicking true 2-"
+filter="threshold absolute 0 most-intense"

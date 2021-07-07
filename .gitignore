@@ -1,0 +1,7 @@
+.nextflow*
+work/*
+result/*
+data/*
+!data/UP000005640_9606_f.revCat.fasta
+!data/download_test.sh
+!result/.gitkeep
