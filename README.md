@@ -7,11 +7,11 @@
 
 1. Install [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html). 
 
-2. Install [docker](https://docs.docker.com/engine/install/) Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
+2. Install [docker](https://docs.docker.com/engine/install/). Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
 
 3. Download HLA-search
 ```
-git clone https://github.com/sekeyWang/HLA-search.git
+git clone https://github.com/waterlooms/HLA-search.git
 ```
 
 4. Download test raw data in data folder

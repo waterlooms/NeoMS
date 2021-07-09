@@ -38,7 +38,7 @@ process run_novor {
 process convert_novor {
     tag "$sample"
 
-    container "mypga"
+    container "0731wsk/protemoics_base"
     containerOptions "--user root"
 
     publishDir "${output_path}/psm", mode: "copy", overwrite: true
@@ -62,7 +62,7 @@ process convert_novor {
 process generate_input {
     tag "$sample"
 
-    container "mypga"
+    container "0731wsk/protemoics_base"
     containerOptions "--gpus all"
     containerOptions "--user root"
 
@@ -96,7 +96,7 @@ process generate_input {
 
 process run_predfull {
     tag "$sample"
-    container "predfull:latest"
+    container "0731wsk:latest"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/predfull/", mode: "copy", overwrite: true
@@ -125,7 +125,7 @@ process process_predfull_result{
 
     accelerator 1
 
-    container "mypga"
+    container "0731wsk/protemoics_base"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/predfull/", mode: "copy", overwrite: true
@@ -173,7 +173,7 @@ process process_pDeep2_results {
 
     tag "$sample"
 
-    container "mypga"
+    container "0731wsk/protemoics_base"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/pDeep2_prediction/", mode: "copy", overwrite: true
@@ -297,7 +297,7 @@ process predict_autoRT {
 
 process generate_feature{
     tag "$sample"
-    container "mypga"
+    container "0731wsk/protemoics_base"
     containerOptions "--gpus all"
     containerOptions "--user root"
 
