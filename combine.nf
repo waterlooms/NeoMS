@@ -17,7 +17,7 @@ sample           = params.prefix
 process combine_features {
     tag "$sample"
 
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--user root"
 
     publishDir "${output_path}", mode: "copy", overwrite: true
@@ -39,7 +39,7 @@ process combine_features {
 process predict_score {
     tag "$sample"
 
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--user root"
     publishDir "${output_path}", mode: "copy", overwrite: true
 

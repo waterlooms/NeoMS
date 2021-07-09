@@ -1,6 +1,6 @@
 file="20120321_EXQ1_MiBa_SA_HCC1143_1"
 
-mkdir result/${file}
+mkdir -p result/${file} 
 
 nextflow run preprocess.nf \
 	--input data/${file}.raw \
@@ -19,5 +19,5 @@ nextflow run dbsearch.nf \
 nextflow run combine.nf \
 	--dbsearch_feature result/${file}/dbsearch/features/dbsearch_feature.txt \
 	--denovo_feature result/${file}/denovo/features/denovo_feature.txt \
-	--model model/0
+	--model model/0 \
 	--out_dir result/${file}/ --mem 32 --cpu 80

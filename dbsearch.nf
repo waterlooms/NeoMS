@@ -37,7 +37,7 @@ process run_comet {
 process generate_input {
     tag "$sample"
 
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--gpus all"
     containerOptions "--user root"
 
@@ -100,7 +100,7 @@ process process_predfull_result{
 
     accelerator 1
 
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/predfull/", mode: "copy", overwrite: true
@@ -148,7 +148,7 @@ process process_pDeep2_results {
 
     tag "$sample"
 
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/pDeep2_prediction/", mode: "copy", overwrite: true
@@ -272,7 +272,7 @@ process predict_autoRT {
 
 process generate_feature{
     tag "$sample"
-    container "0731wsk/protemoics_base"
+    container "0731wsk/proteomics"
     containerOptions "--gpus all"
     containerOptions "--user root"
 

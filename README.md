@@ -3,13 +3,13 @@
 **HLA-search** is an end-to-end immunopeptidomics data analysis tool. HLA-search takes raw data as input and return the search result with high quality.
 
 ## Installation
-0. GPU is required to run HLA-search
+0. GPU is required to run HLA-search.
 
-1. Install [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html). 
+1. Install [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html) and add to environment variables.
 
 2. Install [docker](https://docs.docker.com/engine/install/). Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
 
-3. Download HLA-search
+3. Download HLA-search from Github
 ```
 git clone https://github.com/waterlooms/HLA-search.git
 ```
@@ -17,14 +17,19 @@ git clone https://github.com/waterlooms/HLA-search.git
 4. Download test raw data in data folder
 ```
 cd data/
-sudo chmod +x download_test.sh
+chmod +x download_test.sh
 bash download_test.sh
 ```
 
-5. Run the whole pipeline:
-
+5. Run the whole pipeline. The whole pipeline include 4 steps in nextflow: 
+    1. Preprocessing: Convert the raw file to mgf format.
+    2. De novo: Run de novo software(Novor) on the mgf file and compute features on de novo PSMs(Peptide Spectrum Matching).
+    3. Database search: Run database search tool(comet) on the mgf file and compute features on searched PSMs.
+    4. Combine: Combine features from de novo and db search result. A machine learning model is applied to compute a score for each PSM. 
+    
+The 4 steps have been put into single bash file. You can run the whole pipeline simply by:
 ```
-sudo chmod +x test.sh
+chmod +x test.sh
 bash test.sh
 ```
 
