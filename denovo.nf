@@ -150,8 +150,7 @@ process run_pdeep2 {
 
     tag "$sample"
 
-    container "proteomics/pdeep2:latest"
-    containerOptions "--gpus all"
+    container "0731wsk/pdeep2:latest"
 
     publishDir "${output_path}/pDeep2_prediction/", mode: "copy", overwrite: true
 
@@ -164,7 +163,7 @@ process run_pdeep2 {
 
     script:
     """
-    #export CUDA_VISIBLE_DEVICES=0
+    #export CUDA_VISIBLE_DEVICES=""
     python /opt/pDeep2/predict.py -e $energy -i $instrument -in ${pdeep2_folder}/${sample}_pdeep2_prediction_unique.txt -out ./${sample}_pdeep2_prediction_results.txt
     """
 }
@@ -214,7 +213,7 @@ process train_autoRT {
 
     accelerator 1
 
-    container "proteomics/autort:latest"
+    container "0731wsk/autort:latest"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/autoRT_train/", mode: "copy", overwrite: true
@@ -253,7 +252,7 @@ process predict_autoRT {
 
     tag "$sample"
 
-    container "proteomics/autort:latest"
+    container "0731wsk/autort:latest"
     containerOptions "--gpus all"
 
     publishDir "${output_path}/autoRT_prediction/", mode: "copy", overwrite: true
@@ -285,11 +284,11 @@ process predict_autoRT {
     for file in ${autoRT_prediction_folder}/*.txt
     do
         fraction=`basename \${file} .txt`
-        cp ./\${fraction}/\${fraction}.csv ./results/
+        cp ./\${fraction}/\${fraction}.tsv ./results/
     done
 
     wait
-    awk 'NR==1 {header=\$_} FNR==1 && NR!=1 { \$_ ~ \$header getline; } {print}' ./results/*.csv \
+    awk 'NR==1 {header=\$_} FNR==1 && NR!=1 { \$_ ~ \$header getline; } {print}' ./results/*.tsv \
     > ./results/${sample}_results.txt
     """
 }

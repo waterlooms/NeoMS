@@ -1,11 +1,11 @@
 # HLA-search
 ## Overview
-**HLA-search** is an end-to-end immunopeptidomics data analysis tool. HLA-search takes raw data as input and return the search result with high quality.
+**HLA-search** is an end-to-end immunopeptidomics data analysis tool. HLA-search takes raw data as input and return the search result with high quality. The main steps of HLA-search is compiled in Nextflow(https://www.nextflow.io/docs/latest/getstarted.html)
 
 ## Installation
 0. GPU is required to run HLA-search.
 
-1. Install [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html) and add to environment variables.
+1. Install [Nextflow 20.10](https://github.com/nextflow-io/nextflow/releases/tag/v20.10.0) and add to environment variables.
 
 2. Install [docker](https://docs.docker.com/engine/install/). Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
 
