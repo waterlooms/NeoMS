@@ -11,6 +11,8 @@ nextflow run denovo.nf \
 	--out_dir result/${file}/denovo  \
 	--mem 32 --cpu 80
 
+cp data/*.fasta /tmp
+
 nextflow run dbsearch.nf \
 	--ms_file result/${file}/mgf_file/${file}.mgf \
 	--out_dir result/${file}/dbsearch  \

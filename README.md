@@ -23,8 +23,8 @@ bash download_test.sh
 
 5. Run the whole pipeline. The whole pipeline include 4 steps in nextflow: 
     1. Preprocessing: Convert the raw file to mgf format.
-    2. De novo: Run de novo software(Novor) on the mgf file and compute features on de novo PSMs(Peptide Spectrum Matching).
-    3. Database search: Run database search tool(comet) on the mgf file and compute features on searched PSMs.
+    2. De novo: Run de novo software (Novor) on the mgf file and compute features on de novo PSMs(Peptide Spectrum Matching).
+    3. Database search: Run database search tool (comet) on the mgf file and compute features on searched PSMs. Notice that the .fasta file will be copy to /tmp folder.
     4. Combine: Combine features from de novo and db search result. A machine learning model is applied to compute a score for each PSM. 
     
 The 4 steps have been put into single bash file. You can run the whole pipeline simply by:
