@@ -1,17 +1,17 @@
-# HLA-search
+# NeoMS
 ## Overview
-**HLA-search** is an end-to-end immunopeptidomics data analysis tool. HLA-search takes raw data as input and return the search result with high quality. The main steps of HLA-search is compiled in Nextflow(https://www.nextflow.io/docs/latest/getstarted.html)
+**NeoMS** is an end-to-end immunopeptidomics data analysis tool. NeoMS takes raw data as input and return the search result with high quality. The main steps of NeoMS is compiled in Nextflow(https://www.nextflow.io/docs/latest/getstarted.html)
 
 ## Installation
-0. GPU is required to run HLA-search.
+0. GPU is required to run NeoMS.
 
 1. Install [Nextflow 20.10](https://github.com/nextflow-io/nextflow/releases/tag/v20.10.0) and add to environment variables.
 
-2. Install [docker](https://docs.docker.com/engine/install/). Tools used by HLA-search have been dockerized and will be automatically installed when HLA-search is run in the first time on a computer. HLA-search has been tested on Linux.
+2. Install [docker](https://docs.docker.com/engine/install/). Tools used by NeoMS have been dockerized and will be automatically installed when NeoMS is run in the first time on a computer. NeoMS has been tested on Linux.
 
-3. Download HLA-search from Github
+3. Download NeoMS from Github
 ```
-git clone https://github.com/waterlooms/HLA-search.git
+git clone https://github.com/waterlooms/NeoMS.git
 ```
 
 4. Download test raw data in data folder
